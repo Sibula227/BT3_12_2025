@@ -64,4 +64,9 @@ public class VideoController {
         videoService.delete(videoId);
         return "redirect:/videos";
     }
+ 
+    @GetMapping("/ajax")
+    public String ajaxPage() {
+        return "video/ajax_video";
+    }
 }

@@ -9,9 +9,9 @@ import lombok.*;
 @Entity
 @Table(name = "Videos")
 public class Video {
-    @Id // Đây là khóa chính duy nhất
+    @Id
     @Column(name = "VideoId")
-    private String videoId; // Kiểu String (Ví dụ: V001, V002...)
+    private String videoId;
 
     @Column(name = "Title")
     private String title;
@@ -30,7 +30,6 @@ public class Video {
 
     @ManyToOne
     @JoinColumn(name = "CategoryId")
+    @ToString.Exclude 
     private Category category;
-    
-    // ĐÃ XÓA đoạn private Long id; gây lỗi
 }

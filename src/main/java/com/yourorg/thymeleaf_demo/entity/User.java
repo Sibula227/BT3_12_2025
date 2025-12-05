@@ -1,5 +1,5 @@
 package com.yourorg.thymeleaf_demo.entity;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.List;
@@ -36,5 +36,6 @@ public class User {
     private String images;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<Category> categories;
 }

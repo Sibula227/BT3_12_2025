@@ -1,5 +1,6 @@
 package com.yourorg.thymeleaf_demo.entity;
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import java.util.List;
 
@@ -31,5 +32,6 @@ public class Category {
     private User user; // User tạo category
 
     @OneToMany(mappedBy = "category")
+    @JsonIgnore
     private List<Video> videos;
 }
